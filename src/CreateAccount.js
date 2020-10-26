@@ -28,7 +28,7 @@ export default function CreateAccount(){
        const file=facade.getElement('input[type=file]').files[0];
      if(Object.keys(errorMsg).length===0){
        readFileAndSend(file,function(img){
-        axios.post('http://localhost:3000/register',{
+        axios.post('/register',{
           name:name.value,
           email:email.value,
           password:password.value,

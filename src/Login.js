@@ -29,7 +29,7 @@ export default function Login(props){
           }
           else{
             const data={email:email.value,password:loginPassword.value}
-            axios.get('http://localhost:3000/login',{
+            axios.get('/login',{
                       params:{
                         email:email.value,
                         password:loginPassword.value

@@ -18,6 +18,7 @@ export default function CreateAccount(){
        const email= facade.getElement('#email');
        const password=facade.getElement('#pwd1')
        const password2=facade.getElement('#pwd2');
+       const register=facade.getElement('#register');
        const data={email,password, password2}
        const errorMsg=Validate(data);
         console.log("errorMsg");
@@ -35,7 +36,8 @@ export default function CreateAccount(){
           img:img
           }).then((res)=>{
         if(res.data){
-
+              register.reset();
+              history.push('/login');
         }
        }).catch(e=>console.log(e));
     }
@@ -46,7 +48,7 @@ return <div>
 
 <div>
     <h2>Create Account</h2>
-    <form className="register" >
+    <form className="register" id="register">
     <input type="text" name="username" id="name" placeholder="enter username" required autoFocus/>
     <input type="email" id='email' name="email" placeholder="Enter your email" required/>
     <label className="alertMsg" id='emailMsg'></label>
